@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+def boot!
+  path = File.expand_path("../../", __FILE__)
+  Dir.glob("#{path}/**/*.rb") { |f| puts f; load f }
+end
+
+def reload!
+  Object.send(:remove_const, :Clubhouse)
+  Object.send(:remove_const, :Chrb)
+  boot!
+end
+
+boot!
+
+binding.pry
+
+# Chrb::BulkLabelArchive.new(/consumer_iteration/).save!
+# Chrb::BulkLabelArchive.new(/android_iteration/).save!
+# Chrb::BulkLabelArchive.new(/ios_iteration/)
+# Chrb::BulkLabelArchive.new(/platform_iteration/).save!
+# Chrb::BulkLabelArchive.new(/singapore_iteration/).save!
+
+
