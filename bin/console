@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
+require 'pry'
+
 def boot!
-  path = File.expand_path("../../", __FILE__)
+  path = File.expand_path("../..", __FILE__)
   Dir.glob("#{path}/**/*.rb") { |f| puts f; load f }
 end
 
@@ -13,7 +15,7 @@ end
 
 boot!
 
-binding.pry
+Pry.start
 
 # Chrb::BulkLabelArchive.new(/consumer_iteration/).save!
 # Chrb::BulkLabelArchive.new(/android_iteration/).save!

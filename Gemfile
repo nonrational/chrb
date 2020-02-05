@@ -8,6 +8,7 @@ gem 'activemodel'
 gem 'her'
 gem 'pry'
 gem 'clubhouse_ruby'
+gem 'faraday_middleware', '<= 0.14.0'
 gem 'activesupport'
 
 gem 'dotenv', groups: [:development, :test]
